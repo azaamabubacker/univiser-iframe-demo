@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Univiser Integration Example</title>
+    <link rel="stylesheet" href="./style.css" />
+
+    <!-- Include this Style for iframe -->
+    <style>
+      iframe {
+        width: 1px;
+        min-width: 100%;
+        position: relative;
+        z-index: 2147483647;
+      }
+
+      img {
+        width: 100%;
+        height: 300px;
+        border-radius: 10px;
+        object-fit: cover;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>Welcome to the Univiser Integration Example</h1>
+      <img
+        src="https://unsplash.com/photos/XkKCui44iM0/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzE3NDEyMzU1fA&force=true&w=1920"
+      />
+    </header>
+
+    <main>
+      <!-- Example content section -->
+      <section>
+        <h2>Univiser helps Universities improve their enrollment rate by up to 20%</h2>
+        <p>
+          Univiser is a peer-to-peer platform that helps universities and colleges with their student recruitment
+          strategy by digitizing their student ambassador programme.
+        </p>
+      </section>
+
+      <!-- Univiser iframe integration -->
+      <!-- <iframe id="Univiser" src="https://shoolini.univiser.io/?wordpress=true" frameborder="0"></iframe> -->
+
+      <!-- Include iframe resizer script -->
+      <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@3.6.5/js/iframeResizer.min.js"></script>
+      <script>
+        iFrameResize(
+          {
+            enablePublicMethods: true,
+            heightCalculationMethod: 'lowestElement',
+          },
+          '#Univiser'
+        );
+      </script>
+    </main>
+
+    <footer>
+      <p class="ptag">Contact us at info@example.com | © 2023 Company Name</p>
+      <img
+        src="https://unsplash.com/photos/idhx-MOCDSk/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8Y29udGFjdCUyMHVzfGVufDB8MHx8fDE3MTczODY4MzB8MA&force=true&w=1920"
+      />
+    </footer>
+  </body>
+</html>
