@@ -26,7 +26,7 @@
 
 <body>
   <header>
-    <h1>Welcome to the Univiser Integration Example Changed</h1>
+    <h1>Welcome to the Univiser Integration Example Changed 2</h1>
     <img
       src="https://unsplash.com/photos/XkKCui44iM0/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzE3NDEyMzU1fA&force=true&w=1920" />
   </header>
@@ -51,13 +51,6 @@
         {
           enablePublicMethods: true,
           heightCalculationMethod: 'lowestElement',
-
-          // Add messageCallback to listen for messages from the iframe
-          messageCallback: function (messageData) {
-            if (messageData.message === 'scrollToTop') {
-              window.scrollTo({ top: 500, behavior: 'smooth' });
-            }
-          },
         },
         '#Univiser'
       );
