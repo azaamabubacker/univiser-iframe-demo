@@ -26,7 +26,7 @@
 
 <body>
   <header>
-    <h1>Welcome to the Univiser Integration Example Changed 2</h1>
+    <h1>Welcome to the Univiser Integration Example</h1>
     <img
       src="https://unsplash.com/photos/XkKCui44iM0/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzE3NDEyMzU1fA&force=true&w=1920" />
   </header>
@@ -42,7 +42,7 @@
     </section>
 
     <!-- Univiser iframe integration -->
-    <iframe id="Univiser" src="http://localhost:3000/?wordpress=true" frameborder="0"></iframe>
+    <iframe id="Univiser" src="https://test.univiser.io/?wordpress=true" frameborder="0"></iframe>
 
     <!-- Include iframe resizer script -->
     <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@3.6.5/js/iframeResizer.min.js"></script>
@@ -51,6 +51,12 @@
         {
           enablePublicMethods: true,
           heightCalculationMethod: 'lowestElement',
+
+          messageCallback: function (messageData) {
+            if (messageData.message === 'scrollToTop') {
+              window.scrollTo({ top: 550, behavior: 'smooth' });
+            }
+          },
         },
         '#Univiser'
       );
