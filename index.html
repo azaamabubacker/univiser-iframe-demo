@@ -1,89 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- Primary Meta Tags -->
-    <title>Univiser</title>
-    <meta name="title" content="Univiser iFrame Demo">
-    <meta name="description"
-      content="Explore Univiser's iframe integration with this demo, showcasing how easily student engagement tools can be embedded into any website.">
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://azaamabubacker.github.io/univiser-iframe-demo/">
-    <meta property="og:title" content="Univiser iFrame Demo">
-    <meta property="og:description"
-      content="Explore Univiser's iframe integration with this demo, demonstrating seamless embedding of student engagement tools for enhanced communication.">
-    <meta property="og:image"
-      content="https://cdn.prod.website-files.com/6049cc7c5a2ed9ce1141738b/605489a42906a8585acb3e93_Univiser%20logo-01.png">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="./style.css" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://azaamabubacker.github.io/univiser-iframe-demo/">
-    <meta property="twitter:title" content="Univiser iFrame Demo">
-    <meta property="twitter:description"
-      content="Explore Univiser's iframe integration demo, showcasing seamless embedding of student engagement tools.">
-    <meta property="twitter:image"
-      content="https://cdn.prod.website-files.com/6049cc7c5a2ed9ce1141738b/605489a42906a8585acb3e93_Univiser%20logo-01.png">
-    <link rel="stylesheet" href="./style.css" />
+  <!-- Include this Style for iframe -->
+  <style>
+    iframe {
+      width: 1px;
+      min-width: 100%;
+      position: relative;
+      z-index: 2147483647;
+    }
 
-    <!-- Include this Style for iframe -->
-    <style>
-      iframe {
-        width: 1px;
-        min-width: 100%;
-        position: relative;
-        z-index: 2147483647;
-      }
+    img {
+      width: 100%;
+      height: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+    }
+  </style>
+</head>
 
-      img {
-        width: 100%;
-        height: 300px;
-        border-radius: 10px;
-        object-fit: cover;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1>Welcome to the Univiser Integration Example</h1>
-      <img
-        src="https://unsplash.com/photos/XkKCui44iM0/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzE3NDEyMzU1fA&force=true&w=1920"
-      />
-    </header>
+<body>
+  <header>
+    <h1>Welcome to the Univiser Integration Example Changed</h1>
+    <img
+      src="https://unsplash.com/photos/XkKCui44iM0/download?ixid=M3wxMjA3fDB8MXxhbGx8fHx8fHx8fHwxNzE3NDEyMzU1fA&force=true&w=1920" />
+  </header>
 
-    <main>
-      <!-- Example content section -->
-      <section>
-        <h2>Univiser helps Universities improve their enrollment rate by up to 20%</h2>
-        <p>
-          Univiser is a peer-to-peer platform that helps universities and colleges with their student recruitment
-          strategy by digitizing their student ambassador programme.
-        </p>
-      </section>
+  <main>
+    <!-- Example content section -->
+    <section>
+      <h2>Univiser helps Universities improve their enrollment rate by up to 20%</h2>
+      <p>
+        Univiser is a peer-to-peer platform that helps universities and colleges with their student recruitment
+        strategy by digitizing their student ambassador programme.
+      </p>
+    </section>
 
-      <!-- Univiser iframe integration -->
-      <iframe id="Univiser" src="https://test.univiser.io/?wordpress=true&studentLife=yes" frameborder="0"></iframe>
+    <!-- Univiser iframe integration -->
+    <iframe id="Univiser" src="http://localhost:3000/?wordpress=true" frameborder="0"></iframe>
 
-      <!-- Include iframe resizer script -->
-      <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@3.6.5/js/iframeResizer.min.js"></script>
-      <script>
-        iFrameResize(
-          {
-            enablePublicMethods: true,
-            heightCalculationMethod: 'lowestElement',
+    <!-- Include iframe resizer script -->
+    <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@3.6.5/js/iframeResizer.min.js"></script>
+    <script>
+      iFrameResize(
+        {
+          enablePublicMethods: true,
+          heightCalculationMethod: 'lowestElement',
+
+          // Add messageCallback to listen for messages from the iframe
+          messageCallback: function (messageData) {
+            if (messageData.message === 'scrollToTop') {
+              window.scrollTo({ top: 500, behavior: 'smooth' });
+            }
           },
-          '#Univiser'
-        );
-      </script>
-    </main>
+        },
+        '#Univiser'
+      );
+    </script>
+  </main>
 
-    <footer>
-      <p class="ptag">Contact us at info@example.com | © 2023 Company Name</p>
-      <img
-        src="https://unsplash.com/photos/idhx-MOCDSk/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8Y29udGFjdCUyMHVzfGVufDB8MHx8fDE3MTczODY4MzB8MA&force=true&w=1920"
-      />
-    </footer>
-  </body>
+  <footer>
+    <p class="ptag">Contact us at info@example.com | © 2023 Company Name</p>
+    <img
+      src="https://unsplash.com/photos/idhx-MOCDSk/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8Y29udGFjdCUyMHVzfGVufDB8MHx8fDE3MTczODY4MzB8MA&force=true&w=1920" />
+  </footer>
+</body>
+
 </html>
