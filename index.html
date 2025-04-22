@@ -12,7 +12,7 @@
       width: 1px;
       min-width: 100%;
       position: relative;
-      z-index: 2147483647;
+      height: 3000px;
     }
 
     img {
@@ -42,7 +42,7 @@
     </section>
 
     <!-- Univiser iframe integration -->
-    <iframe id="Univiser" src="https://test.univiser.io/?wordpress=true&studentLife=yes" frameborder="0"></iframe>
+    <iframe id="Univiser" src="https://manavrachna.edu.in/" frameborder="0"></iframe>
 
     <!-- Include iframe resizer script -->
     <script src="https://cdn.jsdelivr.net/npm/iframe-resizer@3.6.5/js/iframeResizer.min.js"></script>
@@ -52,11 +52,14 @@
           enablePublicMethods: true,
           heightCalculationMethod: 'lowestElement',
 
-          messageCallback: function (messageData) {
-            if (messageData.message === 'scrollToTop') {
-              window.scrollTo({ top: 550, behavior: 'smooth' });
-            }
-          },
+        messageCallback: function (messageData) {
+  console.log('Parent: Received message from iframe:', messageData);
+  if (messageData.message === 'scrollToTop') {
+    console.log('Parent: Scrolling to top');
+    window.scrollTo({ top: 500, behavior: 'smooth' });
+  }
+},
+
         },
         '#Univiser'
       );
@@ -68,6 +71,7 @@
     <img
       src="https://unsplash.com/photos/idhx-MOCDSk/download?ixid=M3wxMjA3fDB8MXxzZWFyY2h8Mnx8Y29udGFjdCUyMHVzfGVufDB8MHx8fDE3MTczODY4MzB8MA&force=true&w=1920" />
   </footer>
+<script src="https://azaamabubacker.github.io/univiser-widget/widget-bits.js"></script>
 </body>
 
 </html>
